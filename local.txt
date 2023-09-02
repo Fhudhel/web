@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/sctv.png", SCTV
+#EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Sctv.png", SCTV
 http://210.210.155.37/qwr9ew/s/s03/index.m3u8
 #EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Indosiar.png", INDOSIAR
 http://210.210.155.37/qwr9ew/s/s04/index.m3u8
