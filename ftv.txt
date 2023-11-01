@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://thumbor.prod.vidiocdn.com/qoCQuZph1qVBZEwCc_uBNWaqsAc=/1920x1080/filters:quality(70)/vidio-web-prod-film/uploads/film/image_landscape/8516/emang-mukanya-boleh-selucu-ini-mba-ecedb8.jpg", emang boleh mukanya selucu ini mba
+https://m.vidio.com/videos/7612220/common_tokenized_playlist.m3u8
+#EXTINF:-1 tvg-logo="https://thumbor.prod.vidiocdn.com/YZlr2rb6z66izHOlY4Vf9e8HYuU=/1920x1080/filters:quality(70)/vidio-web-prod-film/uploads/film/image_landscape/9061/jatuh-cinta-sama-kamu-emang-kadang-kiding-7c04cc.jpg", Jatuh Cinta Sama Kamu Emang Kadang Kiding
+https://m.vidio.com/videos/7710440/common_tokenized_playlist.m3u8
+#EXTINF:-1 tvg-logo="https://thumbor.prod.vidiocdn.com/ndm4X_qe7ivzIXxOf4KruWwuGKE=/1920x1080/filters:quality(70)/vidio-web-prod-film/uploads/film/image_landscape/7494/ftv-sctv-miss-kopi-keliling-obviously-mengaduk-aduk-cintaku-8ac693.jpg", Miss Kopi Keliling Obviously Mengaduk-Aduk Cintaku
+https://m.vidio.com/videos/1490527/common_tokenized_playlist.m3u8
+#EXTINF:-1 tvg-logo="https://thumbor.prod.vidiocdn.com/BZHdir6TRPmGk5tf2bCDIQhs5YM=/1920x1080/filters:quality(70)/vidio-web-prod-film/uploads/film/image_landscape/1813/ngenes-jadi-tamu-undangan-di-pernikahan-mantan-bee703.jpg", Ngenes! Jadi Tamu Undangan Di Pernikahan Mantan
+https://m.vidio.com/videos/2039819/common_tokenized_playlist.m3u8
+#EXTINF:-1 tvg-logo="https://thumbor.prod.vidiocdn.com/ZesGcHDZ4Hd1xNzY9lIjwvfNPF8=/1920x1080/filters:quality(70)/vidio-web-prod-film/uploads/film/image_landscape/9016/sejauh-ini-yang-paling-jauh-adalah-nyariin-kamu-39508d.jpg", Sejauh Ini Yang Paling Jauh Adalah Nyariin Kamu
+https://m.vidio.com/videos/7704842/common_tokenized_playlist.m3u8
+
+
