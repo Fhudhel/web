@@ -1,0 +1,56 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/sctv.png", SCTV
+https://tvfreemium.top/embed/sctv
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/indosiar.png", INDOSIAR
+https://tvfreemium.top/embed/indosiar
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/transtv.png", TRANSTV
+https://tvfreemium.top/embed/transtv
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/trans7.png", TRANS7
+https://tvfreemium.top/embed/trans7
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/rcti.png", RCTI
+https://embed.rctiplus.com/live/rcti/okezone
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/mnctv.png", MNCTV
+https://embed.rctiplus.com/live/mnctv/okezone
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/antv.png", ANTV
+https://tvfreemium.top/embed/antv
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/net-tv.png", NET TV
+https://tvfreemium.top/embed/net-tv
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/tvri.png", TVRI
+https://tvfreemium.top/embed/tvri
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/rtv.png", RTV
+https://tvfreemium.top/embed/rtv
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/tvone.png", TV ONE
+https://tvfreemium.top/embed/tvone
+#EXTINF:-1 tvg-logo="https://tvfreemium.top/assets/img/logo/bioskop-indonesia.png", BIOSKOP INDO
+https://tvfreemium.top/embed/bioskop-indonesia
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps1
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvc0RMbkhGb2gt
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps2
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvV2dpUVlIWFJn
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps3
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvcmtvLVFXVjZr
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps4
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvcmtvLVFXVjZr
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps5
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvRTFyczdMMlNx
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps6
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvdHVWVk11SUJD
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps7
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvVHpEQWJXbWNG
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps8
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvWlRXVGFnOEpm
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps9
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvdXlXRlZkdHdr
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/7oUnnF1ky9Df6cQYbuYoVT8gM0p.jpg", bad boys vs crezy girl s2 eps10
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvdXlXRlZkdHdr
+#EXTINF:-1 tvg-logo="https://image.tmdb.org/t/p/w780/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg", The Marvels (2023)
+http://179.43.163.54/iembed/?source=aHR0cHM6Ly9zaG9ydC5pbmsvZXJTeDc4ekVL
+#EXTINF:-1 tvg-logo="https://158.220.81.89/wp-content/uploads/2023/12/up58iAlCAzylAOthgHoOwlXkr5N-152x228.jpg", Dear Jo: Almost is Never Enough (2023)
+https://jwplayer21.com/embed/?NFJoU0xvckxYZjU4RGIwRFlVMUlaaDdmc2NqRDZvZ1Z1NzBHaDh3UnlvVUxaVWRCU0ROeGRxT2d0a281MVp3SGh4cUxVZjU1aUNVZzVEOC9kWUtKQjR4T3pKVGZOaTdZWlo2K0wzdEFOdlFsOHJDUFZ0QjRpSVdGV1ljVEFMY013NFJSYzRjTlU3biswQ0ZtSExkN1NtZjF4eW4zaThVV0FjVXpPSFg2T3pueDlmckk5Z2Z4aWZaYkIxRytuZk1JTTEveXZmcENKM3hYMkxCS243UEVMY01XRlNsemRSMlhPVlNNSGwxejVncHN0UWd1dXhXWHFlUGRkZ1RrbXZVcHZCNnVzQ3FteXlSK24rYldFM1ZlOUE9PQ,,
+
+
+
+
+
+
+
