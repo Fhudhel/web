@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonton Film</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .channel {
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .channel:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .channel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .channel:hover img {
+            filter: brightness(80%);
+        }
+
+        .channel p {
+            padding: 10px;
+            margin: 0;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .channel:hover p {
+            color: #ff4500;
+        }
+
+        .channel::after {
+            content: '\25B6';
+            font-size: 24px;
+            color: #ff4500;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .channel:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            padding: 25px;
+            background: linear-gradient(135deg, #2c3e50, #2980b9);
+            border-radius: 20px;
+            position: relative;
+            animation: slideIn 0.5s ease-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .close:hover {
+            color: #ff4500;
+            transform: rotate(180deg);
+        }
+
+        .modal-content:hover {
+            background: linear-gradient(135deg, #2c3e50, #2980b9);
+        }
+
+        #videoPlayer {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="channelList" class="container"></div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideoPlayer()">&times;</span>
+        <h2>Video Title</h2>
+        <iframe id="videoPlayer" frameborder="0" allowfullscreen allow="encrypted-media" width="100%" height="auto;"></iframe>
+    </div>
+</div>
+
+<footer class="bg-dark text-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Kontak Kami</h5>
+                <p>Email: Solihin111example00@gmail.com</p>
+                <p>Telepon: +6285697046832</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>&copy; 2024 Nonton Film</h5>
+                <p>Dikembangkan oleh Fadil Maulana</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function fetchM3U(url) {
+        return fetch(url)
+            .then(response => response.text())
+            .then(data => parseM3U(data));
+    }
+
+    function parseM3U(m3uContent) {
+        const channels = [];
+        const lines = m3uContent.split('\n');
+
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].startsWith('#EXTINF:')) {
+                const nameMatch = /tvg-logo="([^"]+)"/.exec(lines[i]);
+                const logo = nameMatch ? nameMatch[1] : '';
+                const name = lines[i].split(',')[1]?.trim() || '';
+                const url = lines[i + 1]?.trim() || '';
+
+                channels.push({ name, logo, url });
+            }
+        }
+
+        return channels;
+    }
+
+    function displayChannels(channels) {
+        const channelList = document.getElementById('channelList');
+
+        channels.forEach(channel => {
+            const channelElement = document.createElement('div');
+            channelElement.className = 'channel';
+            channelElement.innerHTML = `
+                <img src="${channel.logo}" alt="${channel.name}">
+                <p>${channel.name}</p>
+            `;
+            channelElement.onclick = function () {
+                openVideoPlayer(channel.url, channel.name);
+            };
+
+            channelList.appendChild(channelElement);
+        });
+    }
+
+    function openVideoPlayer(videoUrl, videoTitle) {
+        const modal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const modalTitle = document.querySelector('.modal-content h2');
+
+        videoPlayer.src = videoUrl;
+        modalTitle.textContent = videoTitle;
+        modal.style.display = 'block';
+    }
+
+    function closeVideoPlayer() {
+        const modal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        modal.style.display = 'none';
+        videoPlayer.pause();
+        videoPlayer.src = '';
+    }
+
+    window.onclick = function (event) {
+        const modal = document.getElementById('videoModal');
+        if (event.target === modal) {
+            closeVideoPlayer();
+        }
+    };
+
+    // URL M3U
+    const m3uUrl = 'https://fhudhel.github.io/web/campur.txt';
+
+    // Fetch M3U content and display channels
+    fetchM3U(m3uUrl)
+        .then(channels => displayChannels(channels))
+        .catch(error => console.error('Error fetching M3U:', error));
+</script>
+
+</body>
+</html>
