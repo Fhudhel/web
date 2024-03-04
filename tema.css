@@ -1,0 +1,24 @@
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+.light-theme {
+  background-color: white;
+  color: black;
+}
+#themeButton {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#themeButton:hover {
+  background-color: #0056b3;
+}
