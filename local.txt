@@ -1,9 +1,11 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Transtv.png", TRANS TV
-https://video.detik.com/transtv/smil:transtv.smil/chunklist_w1542998785_b744100_sleng.m3u8
+https://video.detik.com/transtv/smil:transtv.smil/chunklist.m3u8
 #EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/trans7.png", TRANS 7
-https://video.detik.com/trans7/smil:trans7.smil/chunklist_w318260815_b744100_sleng.m3u8
-#EXTINF:-1 tvg-logo="https://81.0.220.100/wp-content/uploads/2023/11/vieLJtqGxA8loaPwmGi3xBVFJsz-170x255-1-152x228.jpg", Ketika Berhenti Di Sini (2023)
-https://c1.flyeyes.pics/hls/n5ajrdfqyrmne42h4w7alarh362b2yjl2uu2ua54ev3xzncew6w4zmg6p7tq/index-v1-a1.m3u8
-#EXTINF:-1 tvg-logo="https://81.0.220.100/wp-content/uploads/2023/11/bnFiGyF6HALiseeQ8TctDKc0eqj-152x228.jpg", ONDE MANDE! (2023)
-https://n22514x.streamvid.net/hls/n5ajslkiynmne42h4voqjujq35uyfk6oyqddojtk45o6sxmll6gzcv5j7r3q/index-v1-a1.m3u8
+https://video.detik.com/trans7/smil:trans7.smil/chunklist.m3u8
+#EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Antv.png", ANTV
+http://210.210.155.37/uq2663/h/h235/01.m3u8
+#EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Sctv.png", SCTV
+http://210.210.155.37/uq2663/h/h217/01.m3u8
+#EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Indosiar.png", INDOSIAR
+http://210.210.155.37/uq2663/h/h207/01.m3u8
