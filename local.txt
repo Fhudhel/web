@@ -9,3 +9,21 @@ http://210.210.155.37/uq2663/h/h235/01.m3u8
 http://210.210.155.37/uq2663/h/h217/01.m3u8
 #EXTINF:-1 tvg-logo="https://fhudhel.github.io/web/Indosiar.png", INDOSIAR
 http://210.210.155.37/uq2663/h/h207/01.m3u8
+
+#EXTINF:-1 group-title="Local & Nasional" tvg-id="rcti.id" tvg-logo="https://static.rctiplus.id/media/500/files/fta_rcti/Channel_Logo/RCTI.png",RCTI 
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha 
+#KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net:443/?deviceId=OTQyZjJiZTktNTk1Yi0zYjdhLWFhNWItY2NmNWJhYTAzZTNh
+https://cempedak-live-cdn.mncnow.id/live/eds/RCTI-DD/sa_dash_vmx/RCTI-DD.mpd
+
+#EXTINF:-1 group-title="Local & Nasional" tvg-id="rcti.id" tvg-logo="https://static.rctiplus.id/media/500/files/fta_rcti/Channel_Logo/RCTI.png",RCTI 2
+#EXTVLCOPT:http-user-agent=Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM-T285YD Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36
+https://r-plus.sedotcw3.workers.dev/index.m3u8?id=rcti
+
+#EXTINF:-1 group-title="Local & Nasional" tvg-id="mnctv.id" tvg-logo="https://static.rctiplus.id/media/500/files/fta_rcti/Channel_Logo/MNCTV.png",MNCTV 
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha 
+#KODIPROP:inputstream.adaptive.license_key=https://mrpw.ptmnc01.verspective.net:443/?deviceId=OTQyZjJiZTktNTk1Yi0zYjdhLWFhNWItY2NmNWJhYTAzZTNh
+https://cempedak-live-cdn.mncnow.id/live/eds/MNCTV-HD/sa_dash_vmx/MNCTV-HD.mpd
+
+#EXTINF:-1 group-title="Local & Nasional" tvg-id="mnctv.id" tvg-logo="https://static.rctiplus.id/media/500/files/fta_rcti/Channel_Logo/MNCTV.png",MNCTV2
+#EXTVLCOPT:http-user-agent=Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM-T285YD Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36
+https://r-plus.sedotcw3.workers.dev/index.m3u8?id=mnctv
