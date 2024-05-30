@@ -31,3 +31,8 @@ https://r-plus.sedotcw3.workers.dev/index.m3u8?id=mnctv
 #EXTINF:-1 group-title="Local & Nasional" tvg-id="gtv.id" tvg-logo="https://cdnjkt4.transvision.co.id:1000/image/web/channel/4028c68574537fcd0174be52f87b58f2/ffb50ac11f9f42758882f58ff62273be.png",GTV
 #EXTVLCOPT:http-user-agent=Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM-T285YD Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36
 https://r-plus.sedotcw3.workers.dev/index.m3u8?id=gtv
+
+
+#EXTINF:-1 group-title="Local & Nasional" tvg-id="tes.id" tvg-logo="ttt",TES
+#EXTVLCOPT:http-referer=https://m.rctiplus.com/tv/rcti
+https://rcdn.rctiplus.id/rcti-sdi.m3u8?auth_key=1717056817-2076baca6a723330c14f533832fa41e6-0-38869653b99d037982494dad9d2c4609
