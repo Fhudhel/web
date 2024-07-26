@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Mode gelap */
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        .container:hover {
+            transform: translateY(-10px);
+        }
+        .movie-poster {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease;
+        }
+        .movie-poster:hover {
+            transform: scale(1.05);
+        }
+        .movie-details {
+            text-align: center;
+        }
+        .movie-title {
+            font-size: 3em;
+            margin: 0;
+            color: #ffcc00;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .movie-info {
+            margin: 10px 0;
+            font-size: 1.4em;
+            color: #bbb;
+        }
+        .movie-synopsis {
+            margin-top: 10px;
+            line-height: 1.8;
+            color: #ccc;
+            text-align: justify;
+            padding: 0 20px;
+        }
+        .play-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .play-button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+        .player-container {
+            display: none;
+            margin-top: 30px;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 1.5em;
+        }
+        .episode-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .episode-button {
+            display: inline-block;
+            margin: 5px;
+            padding: 12px 25px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .episode-button:hover {
+            background-color: #0097a7;
+            transform: scale(1.05);
+        }
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .player-controls button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8em;
+            color: #ff5722;
+            transition: color 0.3s;
+        }
+        .player-controls button:hover {
+            color: #e64a19;
+        }
+        iframe {
+            width: 100%;
+            height: 60vh;
+            border: none;
+            border-radius: 12px;
+            display: block;
+            margin: auto;
+        }
+        .thumbnail {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        .thumbnail:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="movie-poster" class="movie-poster" src="" alt="Poster">
+        <div class="movie-details">
+            <h1 id="movie-title" class="movie-title"></h1>
+            <div id="movie-info" class="movie-info"></div>
+            <p id="movie-synopsis" class="movie-synopsis"></p>
+            <button id="play-button" class="play-button">Play Full</button>
+            <div id="episode-buttons" class="episode-buttons"></div>
+        </div>
+        <div id="player-container" class="player-container">
+            <div id="loading" class="loading">Loading...</div>
+            <img id="thumbnail" class="thumbnail" src="" alt="Thumbnail">
+            <iframe id="movie-player" src="" allowfullscreen></iframe>
+            <div class="player-controls">
+                <button id="fullscreen-button" title="Fullscreen">🗖</button>
+                <button id="mute-button" title="Mute">🔊</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const API_KEY = '67294c7455597d1001cdeb7d1abbe271';
+        const BASE_URL = 'https://api.themoviedb.org/3';
+        const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+        const isTVShow = urlParams.get('type') === 'tv';
+
+        async function fetchMovieDetail() {
+            try {
+                const response = await fetch(`${BASE_URL}/${isTVShow ? 'tv' : 'movie'}/${movieId}?api_key=${API_KEY}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const movie = await response.json();
+                document.getElementById('movie-title').innerText = isTVShow ? movie.name : movie.title;
+                document.getElementById('movie-synopsis').innerText = movie.overview;
+                document.getElementById('movie-poster').src = `${IMG_URL}${movie.poster_path}`;
+                document.getElementById('movie-info').innerText = `Release Date: ${movie.release_date || movie.first_air_date}`;
+                document.getElementById('thumbnail').src = `${IMG_URL}${movie.backdrop_path}`; // Tambahkan thumbnail
+
+                const playButton = document.getElementById('play-button');
+                const episodeButtons = document.getElementById('episode-buttons');
+                const playerContainer = document.getElementById('player-container');
+                const player = document.getElementById('movie-player');
+                const loading = document.getElementById('loading');
+                const thumbnail = document.getElementById('thumbnail');
+
+                playButton.style.display = 'block'; // Show play button
+
+                playButton.addEventListener('click', () => {
+                    const url = `https://vidsrc.to/embed/${isTVShow ? 'tv' : 'movie'}/${movieId}`;
+                    playerContainer.style.display = 'block';
+                    loading.style.display = 'block';
+                    thumbnail.style.display = 'none'; // Hide thumbnail when play button is clicked
+                    setTimeout(() => {
+                        player.src = url;
+                        loading.style.display = 'none';
+                    }, 2000); // Simulate loading delay
+                });
+
+                // Handling fullscreen
+                document.getElementById('fullscreen-button').addEventListener('click', () => {
+                    if (player.requestFullscreen) {
+                        player.requestFullscreen();
+                    } else if (player.mozRequestFullScreen) { /* Firefox */
+                        player.mozRequestFullScreen();
+                    } else if (player.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                        player.webkitRequestFullscreen();
+                    } else if (player.msRequestFullscreen) { /* IE/Edge */
+                        player.msRequestFullscreen();
+                    }
+                });
+
+                // Handling mute
+                document.getElementById('mute-button').addEventListener('click', () => {
+                    player.muted = !player.muted;
+                    document.getElementById('mute-button').textContent = player.muted ? '🔈' : '🔊';
+                });
+
+            } catch (error) {
+                console.error('Error fetching movie detail:', error);
+            }
+        }
+
+        fetchMovieDetail();
+    </script>
+</body>
+</html>
